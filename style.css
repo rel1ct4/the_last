@@ -1,0 +1,261 @@
+/* Importação da fonte Libre Baskerville */
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+
+:root {
+    /* Definição das variáveis de cor */
+    --azul-principal: #91C8E4;
+    --roxo-principal: #471396;
+    --branco: #F6F6F6;
+    --bege: #FAF7F3;
+    --preto: #000000;
+}
+
+body {
+    font-family: 'Libre Baskerville', serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--branco); /* Fundo do body agora é branco */
+    color: var(--preto); /* Cor do texto padrão (modo claro) */
+    line-height: 1.6;
+}
+
+/* Estilos para o cabeçalho principal do documento (o primeiro <head>) */
+body > head {
+    background-color: var(--roxo-principal);
+    color: var(--branco);
+    padding: 15px 0;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+body > head title {
+    font-size: 0.9em;
+    font-weight: normal;
+    display: block;
+}
+
+.mode {
+    margin-left: auto;
+}
+
+.mode button {
+    background-color: var(--azul-principal);
+    color: var(--preto);
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+}
+
+.mode button:hover {
+    background-color: #7ab7dd; /* Um tom um pouco mais escuro de azul */
+}
+
+main {
+    max-width: 900px; /* Mantido, mas você pode experimentar aumentar para 1000px ou mais */
+    margin: 20px auto;
+    padding: 20px;
+    background-color: var(--bege); /* Fundo do texto agora é bege */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+main > title {
+    display: block;
+    font-size: 2.2em;
+    color: var(--preto); /* Título principal do main agora é preto */
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+h1 {
+    color: var(--preto); /* Títulos <h1> agora são pretos */
+    font-size: 1.8em;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--roxo-principal); /* Linha divisória agora é roxa */
+    padding-bottom: 5px;
+}
+
+/* Os h2 que não são fortes são os parágrafos de texto */
+h2 {
+    color: var(--preto); /* Cor padrão dos parágrafos (modo claro) */
+    font-size: 1.1em;
+    margin-bottom: 1em;
+    font-weight: normal;
+}
+
+h2 strong {
+    font-weight: bold;
+    color: var(--preto); /* Títulos <h2> bold (subtítulos) agora são pretos */
+}
+
+/* Estilo padrão para imagens, antes de serem modificadas por classes específicas */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px auto; /* Para centralizar imagens que não estão em flexbox */
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* --- NOVO ESTILO PARA AS DIVS COM IMAGEM E TEXTO AO LADO (como a imagem_a48fa4.png) --- */
+/* Esta classe será usada para as divs que você quer com imagem e texto lado a lado */
+.text-with-image-layout {
+    display: flex; /* Permite que a imagem e o texto fiquem lado a lado */
+    align-items: flex-start; /* Alinha o topo da imagem com o topo do texto */
+    gap: 20px; /* Espaçamento entre a imagem e o texto */
+    margin-bottom: 30px;
+    /* Remover text-align: left; pois os flex items já alinham-se à esquerda por padrão */
+}
+
+.text-with-image-layout img {
+    width: 100px; /* Ajuste a largura da imagem para um valor fixo, ou porcentagem menor */
+    height: auto;
+    flex-shrink: 0; /* Impede que a imagem encolha se não houver espaço suficiente */
+    object-fit: contain;
+    margin: 0; /* Remove margens extras da imagem */
+    border-radius: 3px; /* Um pouco menos arredondado, para parecer com a imagem de ref. */
+}
+
+.text-with-image-layout h2 {
+    /* O primeiro h2 dentro desta div é o título, ele precisa começar mais para cima */
+    margin-top: 0;
+    margin-bottom: 0.5em; /* Reduz o espaçamento abaixo do título */
+}
+
+/* Para o parágrafo de texto que vem logo após o h2 na .text-with-image-layout */
+.text-with-image-layout h2 + h2 {
+    margin-top: 0;
+}
+
+
+/* Mantendo os estilos para as divs que já estavam funcionando com a imagem e texto lado a lado */
+/* Se todas as suas divs de imagem/texto forem seguir o mesmo layout, você pode
+   substituir estas classes individuais pela classe `.text-with-image-layout`
+   e remover estas regras duplicadas. */
+.imagem1, .imagem2, .imagem3, .imagem4, .imagem8, .imagem9, .imagem10, .imagem11, .imagem12, .imagem13, .imagem18, .imagem19, .imagem20 {
+    /* Estas classes agora herdam os estilos de .text-with-image-layout */
+    /* Caso você queira que elas tenham um comportamento ligeiramente diferente,
+       adicione as propriedades aqui que sobrescreverão as de .text-with-image-layout */
+}
+
+
+/* Ajuste para as imagens agrupadas (14e15, 16e17) que já estavam em flexbox */
+.imagens14e15, .imagens16e17 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.imagens14e15 img, .imagens16e17 img {
+    max-width: 45%;
+    height: auto;
+    margin: 0;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    /* Em telas menores, as imagens com texto lateral voltam a empilhar */
+    .text-with-image-layout {
+        flex-direction: column; /* Empilha a imagem e o texto */
+        align-items: center; /* Centraliza os itens */
+        text-align: center; /* Centraliza o texto */
+    }
+    .text-with-image-layout img {
+        width: 60%; /* Aumenta a imagem para telas menores */
+        margin-bottom: 10px; /* Adiciona um pequeno espaço entre a imagem e o texto */
+    }
+
+    /* Imagens agrupadas também empilham */
+    .imagens14e15 img, .imagens16e17 img {
+        max-width: 90%;
+    }
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: var(--azul-principal);
+    color: var(--preto); /* Cor do texto do cabeçalho da tabela no modo claro */
+}
+
+footer {
+    background-color: var(--roxo-principal);
+    color: var(--branco);
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 40px;
+    border-radius: 0 0 8px 8px;
+    display: flex; /* Transforma o footer em um container flex */
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    gap: 20px; /* Espaçamento entre os itens do footer */
+    flex-wrap: wrap; /* Permite que os itens quebrem a linha se não houver espaço */
+}
+
+footer h3 {
+    margin: 5px 0;
+    font-size: 0.9em;
+    font-weight: normal;
+    white-space: nowrap; /* Impede que o texto de cada h3 quebre em várias linhas */
+}
+
+/* ======================================= */
+/* ESTILOS PARA O MODO ESCURO (DARK MODE)  */
+/* ======================================= */
+body.dark-mode {
+    background-color: var(--preto); /* Fundo do body no modo escuro */
+    color: var(--branco); /* COR DO TEXTO PRINCIPAL AGORA É BRANCA */
+}
+
+body.dark-mode main {
+    background-color: #1a1a1a; /* Fundo do conteúdo principal no modo escuro */
+    color: var(--branco); /* Garante que o texto dentro do main seja branco */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+/* Todos os títulos (main > title, h1, h2, h2 strong) agora serão brancos no modo escuro */
+body.dark-mode main > title,
+body.dark-mode h1,
+body.dark-mode h2, /* Adicionado para garantir que o texto h2 seja branco */
+body.dark-mode h2 strong {
+    color: var(--branco); /* TODOS OS TÍTULOS E TEXTOS FORTES AGORA SÃO BRANCOS */
+}
+
+body.dark-mode .mode button {
+    background-color: var(--roxo-principal);
+    color: var(--branco);
+}
+
+body.dark-mode .mode button:hover {
+    background-color: #3b0e77;
+}
+
+body.dark-mode th {
+    background-color: #2b085f; /* Fundo do cabeçalho da tabela no modo escuro */
+    color: var(--branco); /* Cor do texto do cabeçalho da tabela no modo escuro */
+}
+
+body.dark-mode td {
+    border-color: #555;
+}
