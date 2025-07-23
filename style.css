@@ -10,6 +10,10 @@
     --preto: #000000;
 }
 
+nav {
+    display: inline;
+}
+
 body {
     font-family: 'Libre Baskerville', serif;
     margin: 0;
@@ -17,6 +21,7 @@ body {
     background-color: var(--branco); /* Fundo do body agora é branco */
     color: var(--preto); /* Cor do texto padrão (modo claro) */
     line-height: 1.6;
+    text-align: justify;
 }
 
 /* Estilos para o cabeçalho principal do documento (o primeiro <head>) */
